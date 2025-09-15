@@ -13,4 +13,4 @@ def pdf_extract(file_path):
     pdf_doc.close()
     return full_text
 
-print(pdf_extract('Brain_Facts_BookHighRes.pdf'))
+# print(pdf_extract('Brain_Facts_BookHighRes.pdf'))
