@@ -4,3 +4,16 @@ backend/Lib/
 backend/Include/
 backend/pyvenv.cfg
 backend/pip-selfcheck.json
+share/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+
+# Logs
+*.log
+
+# ChromaDB vector store
+.chromadb/
