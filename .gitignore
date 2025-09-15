@@ -1,0 +1,6 @@
+# Ignore ALL virtual environment folders/files
+backend/Scripts/
+backend/Lib/  
+backend/Include/
+backend/pyvenv.cfg
+backend/pip-selfcheck.json
