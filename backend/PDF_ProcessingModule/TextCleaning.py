@@ -1,5 +1,5 @@
 import re
-import PDFExtraction as pd
+from . import PDFExtraction as pd
 
 def text_clean(text):
 
@@ -18,6 +18,6 @@ def text_clean(text):
 
     return text.strip()
 
-raw = pd.pdf_extract('Brain_Facts_BookHighRes.pdf')
-clean = text_clean(raw)
-print(clean)
+# raw = pd.pdf_extract('Brain_Facts_BookHighRes.pdf')
+# clean = text_clean(raw)
+# print(clean)

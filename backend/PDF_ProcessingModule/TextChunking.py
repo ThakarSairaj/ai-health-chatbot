@@ -1,5 +1,5 @@
-import PDFExtraction as pd
-import TextCleaning as tc
+from . import PDFExtraction as pd
+from . import TextCleaning as tc
 
 def text_chunks(text, chunks = 1000, overlap = 100):
 
@@ -14,10 +14,10 @@ def text_chunks(text, chunks = 1000, overlap = 100):
     return chun
 
 
-raw = pd.pdf_extract('Brain_Facts_BookHighRes.pdf')
+# raw = pd.pdf_extract('Brain_Facts_BookHighRes.pdf')
 
-clean = tc.text_clean(raw)
+# clean = tc.text_clean(raw)
 
-chunkss = text_chunks(clean)
+# chunkss = text_chunks(clean)
 
-print(clean)
+# print(clean)
