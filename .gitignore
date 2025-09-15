@@ -1,19 +1,21 @@
-# Ignore ALL virtual environment folders/files
+# Ignore ALL virtual environment folders/files under backend
 backend/Scripts/
-backend/Lib/  
+backend/Lib/
 backend/Include/
 backend/pyvenv.cfg
 backend/pip-selfcheck.json
-share/
+backend/share/
 
-# Python cache
+# Ignore your ChromaDB folder
+backend/brain_medical_database/
+
+# Ignore Python cache
 __pycache__/
 *.pyc
 *.pyo
 
-
-# Logs
+# Ignore logs
 *.log
 
-# ChromaDB vector store
+# Ignore ChromaDB internal folder if present elsewhere
 .chromadb/
