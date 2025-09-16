@@ -1,8 +1,11 @@
 # File: vectorDB/genEmbeddings.py
 
-from PDF_ProcessingModule import pdf_extract, text_clean, text_chunks
+from PDF_ProcessingModule import PDFExtraction, TextChunking, TextCleaning
 import chromadb
 
+pd =PDFExtraction
+tclean =TextCleaning
+tchuk =TextChunking
 
 def process_and_store_pdf(
     pdf_path: str,
@@ -19,21 +22,21 @@ def process_and_store_pdf(
         collection_name (str): Name of the ChromaDB collection.
         metadata_template (dict): Template for metadata (chunk_number will be added automatically).
     """
-    print("🔍 Extracting text from PDF...")
-    raw_data = pdf_extract(pdf_path)
+    print("Extracting text from PDF.....")
+    raw_data = a.pdf_extract(pdf_path)
 
-    print("🧼 Cleaning extracted text...")
-    clean_data = text_clean(raw_data)
+    print("Cleaning extracted text.....")
+    clean_data = b.text_clean(raw_data)
 
-    print("🧩 Chunking cleaned text...")
-    chunk_data = text_chunks(clean_data)
+    print("Chunking cleaned text.....")
+    chunk_data = c.text_chunks(clean_data)
 
-    print(f"🧠 Initializing ChromaDB at {chroma_path}...")
+    print(f"Initializing ChromaDB at {chroma_path}...")
     client = chromadb.PersistentClient(path=chroma_path)
 
     # Get or create the collection safely
     collection = client.get_or_create_collection(name=collection_name)
-    print(f"📚 Using collection: {collection_name}")
+    print(f"Using collection: {collection_name}")
 
     # Default metadata if none provided
     if metadata_template is None:
@@ -43,7 +46,7 @@ def process_and_store_pdf(
             "content_type": "medical_anatomy"
         }
 
-    print("📥 Storing chunks in ChromaDB...")
+    print("Storing chunks in ChromaDB..... this migh take a moment")
     collection.add(
         documents=chunk_data,
         ids=[f"{collection_name}_chunk_{i}" for i in range(len(chunk_data))],
@@ -53,7 +56,7 @@ def process_and_store_pdf(
         ]
     )
 
-    print(f"✅ Successfully stored {len(chunk_data)} chunks in ChromaDB!")
+    print(f"Successfully stored {len(chunk_data)} chunks in ChromaDB!")
 
 
 if __name__ == "__main__":

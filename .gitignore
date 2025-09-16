@@ -15,8 +15,16 @@ __pycache__/
 *.pyc
 *.pyo
 
+
 # Ignore logs
 *.log
+
+# Streamlit
+etc
+
+
+# Temp Ignore
+admin_frontend
 
 # Ignore ChromaDB internal folder if present elsewhere
 .chromadb/
