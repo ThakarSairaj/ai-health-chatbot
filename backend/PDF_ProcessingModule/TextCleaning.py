@@ -6,7 +6,7 @@ def text_clean(text):
     #Removes Extra Spaces and break lines
     text = re.sub(r'\s+' , ' ', text)
 
-    #Userful to remove the header and footer
+    #Useful to remove the header and footer
     text = re.sub(r'Pages \d+', '', text)
     text = re.sub(r'Chapter \d+', '', text)
 
