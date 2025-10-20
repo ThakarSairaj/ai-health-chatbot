@@ -5,6 +5,7 @@ backend/Include/
 backend/pyvenv.cfg
 backend/pip-selfcheck.json
 backend/share/
+backend/testing/
 
 # Ignore your ChromaDB folder
 backend/vectorDB/brain_medical_database/
@@ -25,6 +26,12 @@ etc
 
 # Temp Ignore
 admin_frontend
+backend/vectorDB/t.py
+backend/vectorDB/temp.py
+
 
 # Ignore ChromaDB internal folder if present elsewhere
 .chromadb/
+
+# Store Room contains all the files some working while some not
+storeRoom
